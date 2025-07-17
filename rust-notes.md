@@ -48,6 +48,33 @@
   }
   ```
 
+## Async/Await
+
+- asyncs allow you to let other tasks to run so that slower tasks don't end up being blockers on your whole program
+  - Futures/Promises – Represent a value that’s not ready yet
+  - await – Says "pause here until that value is ready."
+  - async fn – Marks a function that returns a future instead of an immediate result
+- async fn returns a future (impl Future)
+- `.await` yields control until the future completes
+- `tokio::main` macro sets up the async runtime
+- you can run multiple tasks concurrently using `tokio::spawn` or `.join!`
+
+## Implementations (Impl)
+
+- it’s where you define how methods or traits work for a struct or enum
+
+  ```Rust
+      struct Circle {
+        radius: f64,
+    }
+
+    impl Circle {
+        fn area(&self) -> f64 {
+            3.14 * self.radius * self.radius
+        }
+    }
+  ```
+
 ## Vocabulary
 
 - **Non-Lexical Lifetimes (NLL)**: A variable’s lifetime ends when it is no longer used, not necessarily when its scope ends
